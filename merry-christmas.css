@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 500px;
+}
+h1 {
+  color: #fff;
+  position: relative;
+  margin-top: 200px;
+  text-align: center;
+  font-size: 4.6rem;
+  letter-spacing: 0.2rem;
+  text-shadow: 0px 0px 8px rgba(255, 65, 185, 1);
+  animation: heading-blink 1s infinite both;
+  top: -550px;
+}
+#wire {
+  text-align: center;
+  white-space: nowrap; /* nowrap se sb ke sb element ek line m aa gye*/
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  top: -80px;
+  border-bottom: 3px solid #222;
+  height: 80px;
+}
+#wire li {
+  position: relative;
+  list-style: none;
+  margin: 0 15px;
+  padding: 0;
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  border-radius: 50%;
+  top: 82px;
+  animation: even-blink 1s infinite both;
+}
+#wire li:nth-child(odd) {
+  animation: odd-blink 1s infinite both;
+}
+
+@keyframes even-blink {
+  0%,
+  100% {
+    background: rgba(255, 230, 65, 1);
+    box-shadow: 0px 2px 20px 4px rgba(255, 230, 65, 1);
+  }
+  50% {
+    background-color: rgba(255, 230, 65, 0.5);
+    box-shadow: 0px 2px 20px 4px rgba(255, 230, 65, 0.3);
+  }
+}
+@keyframes odd-blink {
+  50% {
+    background-color: rgb(255, 0, 162);
+    box-shadow: 0px 2px 20px 4px rgba(255, 65, 185, 1);
+  }
+  0%,
+  100% {
+    background-color: rgba(255, 65, 185, 0.5);
+    box-shadow: 0px 2px 20px 4px rgba(255, 65, 185, 0.3);
+  }
+}
+@keyframes heading-blink {
+  0%,
+  100% {
+    text-shadow: 0px 0px 8px rgba(255, 65, 185, 1);
+  }
+  50% {
+    text-shadow: 0px 0px 8px rgb(247, 214, 0);
+  }
+}
+
+/* pop - styling */
+
+.button {
+  border: 3px solid white;
+  padding: 10px;
+  color: #eee;
+  text-decoration: none;
+  border-radius: 1rem;
+  position: relative;
+  top: -730px;
+  left: 30px;
+}
+.button:hover {
+  background-color: turquoise;
+  color: black;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.popup-content img {
+  width: 500px;
+  height: 300px;
+  box-sizing: border-box;
+}
+
+#xmas-popup .popup-content {
+  width: 500px;
+  height: 300px;
+  background: #bbb;
+  margin: 200px 650px;
+  position: relative;
+  border: 5px solid #fff;
+  bottom: 30px;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
+  background: #222;
+  border: 3px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  line-height: 0;
+  padding: 9px 0 11px;
+  width: 20px;
+  text-align: center;
+}
+
+.popup:target {
+  display: block;
+}
+
+/* christmas box styling */
+
+.present {
+  width: 410px;
+  margin: 0 auto;
+  position: absolute;
+  top: 350px;
+  left: 40px;
+}
+.box,
+.lid {
+  background: -webkit-radial-gradient(white 15%, transparent 15.1%),
+    -webkit-radial-gradient(white 15%, transparent 15.1%), rgb(240, 58, 58);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  position: relative;
+  margin: 0 auto;
+}
+.box {
+  width: 400px;
+  height: 220px;
+}
+.lid {
+  width: 400px;
+  height: 70px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 0 2px;
+  background-color: rgb(216, 52, 52);
+  top: 0;
+  left: 0;
+  transition: top ease-out 0.5s, left ease-out 0.5s, transform ease-out 0.5s;
+}
+.box span,
+.lid span {
+  position: absolute;
+  display: block;
+  background: rgba(235, 199, 0, 0.8);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.box span:first-child {
+  width: 100%;
+  height: 60px;
+  top: 70px;
+}
+.box span:last-child,
+.lid span {
+  width: 60px;
+  height: 100%;
+  left: 170px;
+}
+.lid span {
+  left: 172px; /* kyuki padding di h 2px ki lid ki isliye isse 2px left krna pdega*/
+}
+.promo {
+  font-size: 30px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  position: relative;
+  height: 0;
+  top: 10px;
+  transition: all ease-out 0.7s;
+}
+.promo p {
+  font-size: 24px;
+  margin: 0;
+}
+.promo h2 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.present:hover .lid {
+  top: -100px;
+  transform: rotateZ(10deg);
+  left: 10px;
+}
+.present:hover .promo {
+  top: -80px;
+}
